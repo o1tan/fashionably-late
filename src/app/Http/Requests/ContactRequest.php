@@ -6,21 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ContactRequest extends FormRequest
 {
-    public function messages()
-    {
-        return [
-            'name.required' => '名前を入力してください',
-            'name.string' => '名前を文字列で入力してください',
-            'name.max' => '名前を255文字以下で入力してください',
-            'email.required' => 'メールアドレスを入力してください',
-            'email.string' => 'メールアドレスを文字列で入力してください',
-            'email.email' => '有効なメールアドレスを入力してください',
-            'email.max' => 'メールアドレスを255文字以下で入力してください',
-            'tel.required' => '電話番号を入力してください',
-            'tel.numeric' => '電話番号を数字で入力してください',
-            'tel.digits_between' => '電話番号を10〜11文字の数字で入力してください',
-        ];
-    }
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -39,9 +24,68 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-          'name' => ['required', 'string', 'max:255'],
-          'email' => ['required', 'string', 'email', 'max:255'],
-          'tel' => ['required', 'numeric', 'digits_between:10,11'],
+            'last_name' => ['required', 'string', 'max:8'],
+            'first_name' => ['required', 'string', 'max:8'],
+            'gender' => ['required', 'in:1,2,3'],
+            'email' => ['required', 'email', 'max:255'],
+            'tel1' => ['required', 'regex:/^[0-9]+$/', 'max:5'],
+            'tel2' => ['required', 'regex:/^[0-9]+$/', 'max:5'],
+            'tel3' => ['required', 'regex:/^[0-9]+$/', 'max:5'],
+            'address' => ['required', 'string', 'max:255'],
+            'building' => ['nullable', 'string', 'max:255'],
+            'category_id' => ['required', 'exists:categories,id'],
+            'detail' => ['required', 'string', 'max:120'],
+        ];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'last_name.required' => '姓を入力してください',
+            'last_name.string' => '姓を文字列で入力してください',
+            'last_name.max' => '姓は8文字以内で入力してください',
+
+            'first_name.required' => '名を入力してください',
+            'first_name.string' => '名を文字列で入力してください',
+            'first_name.max' => '名は8文字以内で入力してください',
+
+            'gender.required' => '性別を選択してください',
+            'gender.in' => '性別を正しく選択してください',
+
+            'email.required' => 'メールアドレスを入力してください',
+            'email.email' => 'メールアドレスはメール形式で入力してください',
+            'email.max' => 'メールアドレスは255文字以内で入力してください',
+
+            'tel1.required' => '電話番号を入力してください',
+            'tel1.regex' => '電話番号は半角数字で入力してください',
+            'tel1.max' => '電話番号は5桁以内で入力してください',
+
+            'tel2.required' => '電話番号を入力してください',
+            'tel2.regex' => '電話番号は半角数字で入力してください',
+            'tel2.max' => '電話番号は5桁以内で入力してください',
+
+            'tel3.required' => '電話番号を入力してください',
+            'tel3.regex' => '電話番号は半角数字で入力してください',
+            'tel3.max' => '電話番号は5桁以内で入力してください',
+
+            'address.required' => '住所を入力してください',
+            'address.string' => '住所を文字列で入力してください',
+            'address.max' => '住所は255文字以内で入力してください',
+
+            'building.string' => '建物名を文字列で入力してください',
+            'building.max' => '建物名は255文字以内で入力してください',
+
+            'category_id.required' => 'お問い合わせの種類を選択してください',
+            'category_id.exists' => 'お問い合わせの種類を正しく選択してください',
+
+            'detail.required' => 'お問い合わせ内容を入力してください',
+            'detail.string' => 'お問い合わせ内容を文字列で入力してください',
+            'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
         ];
     }
 }
