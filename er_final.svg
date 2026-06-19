@@ -44,8 +44,4 @@
 
   <text x="465" y="238" font-family="sans-serif" font-size="20" fill="#8b7969">1</text>
   <text x="535" y="195" font-family="sans-serif" font-size="20" fill="#8b7969">N</text>
-
-  <text x="500" y="295" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#8b7969">
-    categories 1 : N contacts
-  </text>
 </svg>
