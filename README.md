@@ -152,4 +152,4 @@ chmod -R 777 storage bootstrap/cache
 
 ## ER図
 
-![ER図](./er.svg)
+![ER図](./er_diagram.svg)
