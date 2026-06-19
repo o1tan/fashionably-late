@@ -2,7 +2,7 @@
   <rect width="1000" height="600" fill="#f8f5f2"/>
 
   <text x="500" y="55" text-anchor="middle" font-family="serif" font-size="32" fill="#8b7969">
-    FashionablyLate ER Diagram
+    FashionablyLate ER図
   </text>
 
   <!-- categories table -->
