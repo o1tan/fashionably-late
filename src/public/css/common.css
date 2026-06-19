@@ -1,16 +1,25 @@
+body {
+    color: #8b7969;
+    font-family: "Times New Roman", serif;
+    background: #fff;
+}
+
 .header {
-    background: #000;
+    background: #fff;
+    border-bottom: 1px solid #e0dfde;
 }
 
 .header__inner {
+    position: relative;
     margin: 0 auto;
     padding: 20px 15px;
     max-width: 1230px;
+    text-align: center;
 }
 
 .header__logo {
-    color: #fff;
+    color: #8b7969;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: normal;
+    font-size: 34px;
 }

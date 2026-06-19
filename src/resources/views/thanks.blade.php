@@ -7,7 +7,11 @@
 @section('content')
 <div class="thanks__content">
   <div class="thanks__heading">
-    <h2>お問い合わせありがとうございます</h2>
+    <h2>お問い合わせありがとうございました</h2>
   </div>
+
+  <a class="thanks__button" href="{{ route('contacts.index') }}">
+    HOME
+  </a>
 </div>
 @endsection

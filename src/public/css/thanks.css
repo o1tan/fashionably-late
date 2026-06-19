@@ -1,27 +1,24 @@
-.header {
-    background: #000;
-}
-
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-}
-
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-}
-
 .thanks__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    padding: 140px 15px 60px;
     max-width: 1230px;
+    text-align: center;
 }
 
 .thanks__heading {
     margin-bottom: 40px;
-    text-align: center;
+}
+
+.thanks__heading h2 {
+    color: #8b7969;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.thanks__button {
+    display: inline-block;
+    padding: 10px 40px;
+    background: #82756a;
+    color: #fff;
+    text-decoration: none;
 }

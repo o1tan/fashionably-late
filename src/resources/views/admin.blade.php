@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
 @section('content')
@@ -179,9 +180,29 @@
             </dialog>
         @endforeach
 
-        <div class="pagination">
-            {{ $contacts->links() }}
-        </div>
+        @if ($contacts->hasPages())
+            <div class="pagination">
+                @if ($contacts->onFirstPage())
+                    <span class="pagination__link pagination__link--disabled">&lt;</span>
+                @else
+                    <a class="pagination__link" href="{{ $contacts->previousPageUrl() }}">&lt;</a>
+                @endif
+
+                @for ($i = 1; $i <= $contacts->lastPage(); $i++)
+                    @if ($i == $contacts->currentPage())
+                        <span class="pagination__link pagination__link--active">{{ $i }}</span>
+                    @else
+                        <a class="pagination__link" href="{{ $contacts->url($i) }}">{{ $i }}</a>
+                    @endif
+                @endfor
+
+                @if ($contacts->hasMorePages())
+                    <a class="pagination__link" href="{{ $contacts->nextPageUrl() }}">&gt;</a>
+                @else
+                    <span class="pagination__link pagination__link--disabled">&gt;</span>
+                @endif
+            </div>
+        @endif
     </div>
 </main>
 @endsection

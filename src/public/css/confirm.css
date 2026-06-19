@@ -1,61 +1,48 @@
-.header {
-    background: #000;
-}
-
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-}
-
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-}
-
 .confirm__content {
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    padding: 40px 15px 60px;
+    max-width: 900px;
 }
 
 .confirm__heading {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-align: center;
+}
+
+.confirm__heading h2 {
+    color: #8b7969;
+    font-size: 35px;
+    font-weight: normal;
 }
 
 .form {
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
 
 .confirm-table {
-    border: 1px solid #ddd;
+    border: 1px solid #e0dfde;
 }
 
 .confirm-table__inner {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .confirm-table__header {
-    padding: 15px;
-    width: 20%;
-    border-bottom: 1px solid #ddd;
-    background-color: #eee;
-    font-weight: bold;
+    padding: 20px 35px;
+    width: 30%;
+    border-bottom: 1px solid #e0dfde;
+    background: #baa899;
+    color: #fff;
+    font-weight: normal;
+    text-align: left;
 }
 
 .confirm-table__text {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.confirm-table__text input {
-    width: 100%;
-    outline: none;
-    border: none;
+    padding: 20px 35px;
+    border-bottom: 1px solid #e0dfde;
+    color: #8b7969;
 }
 
 .confirm-table__row:last-child .confirm-table__header,
@@ -64,17 +51,26 @@
 }
 
 .form__button {
-    margin-top: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 35px;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 120px;
+    height: 42px;
     border: none;
-    border-radius: 3px;
-    background: #000;
+    background: #82756a;
     color: #fff;
+    cursor: pointer;
+}
+
+.form__button-correction {
+    border: none;
+    background: transparent;
+    color: #8b7969;
+    text-decoration: underline;
     cursor: pointer;
 }
